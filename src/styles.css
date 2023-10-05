@@ -110,8 +110,8 @@ h2 {
 }
 
 .mole {
-  background:url('../assets/sad-lag.png') bottom center no-repeat;
-  background-size: 50%;
+  background:url('../assets/mad_devil.png') bottom center no-repeat;
+  background-size: 60%;
   position: absolute;
   top: 90%;
   width: 100%;
@@ -123,7 +123,7 @@ h2 {
 
 
 .hole.show .mole {
-  top: -15%;
+  top: -10%;
   transform: scale(1.1);
 }
 
