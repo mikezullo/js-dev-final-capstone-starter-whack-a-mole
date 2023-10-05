@@ -53,6 +53,7 @@ h2 {
   align-items: center; /* Vertically center the content */
   justify-content: center; /* Horizontally center the content */
   position: fixed;
+  -webkit-text-stroke: 1px black;
   top: 0;
   left: 0;
   width: 100%;
@@ -61,14 +62,14 @@ h2 {
   z-index: 999; /* Ensure it's on top of other elements */
 }
 
-#game-over-screen h2 {
+#game-over-screen h3 {
   font-size: 40px;
-  color: white;
+  color: rgb(60, 255, 0);
 }
 
 #game-over-screen h3 {
-  font-size: 40px;
-  color: white;
+  font-size: 100px;
+  color: rgb(43, 255, 0);
   font-weight: bold;
   display: flex;
   align-items: center; /* Vertically center the content */
@@ -76,7 +77,7 @@ h2 {
 }
 
 #final-score {
-  font-size: 50px;
+  font-size:120px;
   color: yellow;
   font-weight: bold;
 }

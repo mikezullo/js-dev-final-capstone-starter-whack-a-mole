@@ -4,8 +4,6 @@ const moles = document.querySelectorAll(".mole");
 const startButton = document.querySelector("#start");
 const score = document.querySelector("#score");
 const timerDisplay = document.querySelector("#timer");
-const audioHit = new Audio("./assets/hit.mp3");
-const audioStart = new Audio('./assets/molesong.mp3')
 
 // Define global variables
 let time = 0;
@@ -99,18 +97,16 @@ function clearScore() {
 // Updates the control board with the timer if time > 0
 function updateTimer() {
   if (time > 0) {
-    time -= 1; // Decreases the timer by 1 second
-    timerDisplay.textContent = time; // Update the time display in the HTML
-  } else {
-    time = 0;
-    gameOver(); // Stops the game when time reaches 0
+    time--;
+    timerDisplay.textContent = time;
+    // gameOver(); // Stops the game when time reaches 0
   }
   return time;
 }
 
 // Starts the timer using setInterval. For each 1000ms (1 second) the updateTimer function get called
 function startTimer() {
-  timer = setInterval(updateTimer, 1000); // Updates timer every 1 second
+  setInterval(updateTimer, 1000); // Updates timer every 1 second
   return timer;
 }
 
@@ -128,11 +124,17 @@ function playMoleSound() {
   moleAudio.play();
 }
 
+function playGameMusic() {
+  const moleAudio = document.getElementById("game-music");
+  moleAudio.volume = 1.0;
+  moleAudio.play();
+}
+
 // Event handler that gets called when a player clicks on a mole
-function whack(score) { 
+function whack(event) { 
+  playHitSound(); // Plays the punch.wav sound when a mole is clicked
   updateScore();
-  audioHit.currentTime = 0;
-  audioHit.play(); 
+
   
   return points;
 }
@@ -174,6 +176,7 @@ startButton.addEventListener("click", startGame); // Add a click event listener 
 
 // Function that starts the game when the `startButton` is clicked.
 function startGame() {
+  playGameMusic(); // Plays the evil-theme audio at the start of the game
   setDuration(10); // Set the game duration to 10 seconds
   startTimer(); // Start the game timer
   showUp(); // Start the game by showing the moles
