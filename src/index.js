@@ -124,6 +124,12 @@ function playHitSound() {
   hitAudio.play();
 }
 
+function playGameMusic() {
+  const hitAudio = document.getElementById("game-music");
+  hitAudio.volume = 1.0;
+  hitAudio.play();
+}
+
 // Function that sets the moleAudio sound
 function playMoleSound() {
   const moleAudio = document.getElementById("mole-audio");
@@ -176,10 +182,11 @@ startButton.addEventListener("click", startGame); // Add a click event listener 
 
 // Function that starts the game when the `startButton` is clicked.
 function startGame() {
-  setDuration(3); // Set the game duration to 10 seconds
+  setDuration(10); // Set the game duration to 10 seconds
   startTimer(); // Start the game timer
   showUp(); // Start the game by showing the moles
   clearScore(); // Initialize the score to 0
+  playGameMusic();
   document.body.style.cursor = 'url("assets/mallet.png"), auto'; // Sets the cursor style
 
   setEventListeners(); // Set click event listeners for moles
