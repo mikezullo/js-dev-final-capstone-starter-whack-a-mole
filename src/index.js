@@ -176,6 +176,11 @@ startButton.addEventListener("click", startGame); // Add a click event listener 
 
 // Function that starts the game when the `startButton` is clicked.
 function startGame() {
+  // Clear the previous timer if it exists
+  if (timer) {
+    clearInterval(timer);
+  }
+
   playGameMusic(); // Plays the evil-theme audio at the start of the game
   setDuration(10); // Set the game duration to 10 seconds
   startTimer(); // Start the game timer
