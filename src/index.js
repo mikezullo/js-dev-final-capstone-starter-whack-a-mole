@@ -183,8 +183,9 @@ function startGame() {
 
   playGameMusic(); // Plays the evil-theme audio at the start of the game
   setDuration(10); // Set the game duration to 10 seconds
-  startTimer(); // Start the game timer
+  timer = setInterval(updateTimer, 1000); // Store the interval ID in the timer
   showUp(); // Start the game by showing the moles
+  // startTimer(); This function commented out as it breaks the game's timer in subsequant games
   clearScore(); // Initialize the score to 0
   document.body.style.cursor = 'url("assets/mallet.png"), auto'; // Sets the cursor style
 
