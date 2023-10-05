@@ -92,6 +92,7 @@ h2 {
   flex: 1 0 33.33%;
   overflow: hidden;
   position: relative;
+  width: 200px;
 }
 
 .hole:after {
@@ -108,7 +109,7 @@ h2 {
 }
 
 .mole {
-  background:url('../assets/mole.png') bottom center no-repeat;
+  background:url('../assets/mole_hit.png') bottom center no-repeat;
   background-size: 40%;
   position: absolute;
   top: 100%;
@@ -118,6 +119,7 @@ h2 {
   transition: all 1s;
   pointer-events:auto;
 }
+
 
 .hole.show .mole {
   top: -25%;
